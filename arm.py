@@ -1,15 +1,24 @@
 def armstrong(n):
-    sum = 0
+    s = 0
     order = len(str(n))
     copy_n = n
     while(n>0):
         digit = n%10
-        sum += digit **order
+        s += digit **order
         n = n//10
     
-    if(sum == copy_n):
-        print(f"{copy_n"} is armstrong number")
-        return True
+    if(s == copy_n):
+        print(f"{copy_n} is armstrong number")
+        result = {
+            "Number" : copy_n,
+            "Armstrong" : True,
+            "Server IP" : "123.154.1234.00"
+        }
     else:
-        print(f"{copy_n"} is not armstrong number")
-        return False
+        print(f"{copy_n} is not armstrong number")
+        result = {
+            "Number" : copy_n,
+            "Armstrong" : False,
+            "Server IP" : "123.154.1234.00"
+        }
+    

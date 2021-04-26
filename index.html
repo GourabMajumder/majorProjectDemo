@@ -7,15 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script> -->
+
 </head>
 
 <body>
 
+    <input type="number" id="num">
     <button onclick="call()">CALL</button>
 
     <script>
         function call() {
-
+            var n = document.getElementById("num").value;
             // app.use(function (req, res, next) {
             //     res.header("Access-Control-Allow-Origin", "http://127.0.0.1:5000");
             //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -30,11 +33,13 @@
                     console.log("error")
                 }
             };
-            xhttp.open("GET" , `https://jsonplaceholder.typicode.com/users/1`)
+
+            // https://cors-anywhere.herokuapp.com/ temporarely unlock demo and use
+            xhttp.open("GET", `https://cors-anywhere.herokuapp.com/http://127.0.0.1:5000/new`, true);
             xhttp.send();
             // console.log(fetch("https://cors-anywhere.herokuapp.com/http://gourab.pythonanywhere.com/153"))
-                // .then(res => console.log(res));
-                // .then(data => console.log(data))
+            // .then(res => console.log(res));
+            // .then(data => console.log(data))
         }
     </script>
 
